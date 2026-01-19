@@ -185,38 +185,42 @@ body::before {
 /* About me section */
 .section-container {
   margin-top: 250px;
-  display: flex;
-  padding: 50px;
   background-color: var(--section-background-color);
 }
 
-.section-container h1{
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.about-me-content {
+  flex: 1;
+}
+
+.about-me-content h1 {
   font-size: 36px;
   font-weight: 700;
-  margin-bottom: 8rem;
-  margin-left: 23rem;
+  margin-bottom: 3rem;
   color: var(--background-body-color);
 }
 
-.section-container p{
+.about-me-content p {
   font-size: 15px;
   font-weight: 400;
   color: var(--background-body-color);
   line-height: 1.6;
-  width: 39%;
-  height: auto;
+  max-width: 520px;
   margin-bottom: 20px;
-  margin-left: 20rem;
 }
 
 .list-about-me {
-  
+  flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  flex-flow: column;
-  margin-right: 20rem;
-  margin-top: 8rem;
-
+  justify-content: center;
 }
 
 .list-about-me ul {
@@ -226,37 +230,46 @@ body::before {
 }
 
 .list-about-me li {
-
   list-style: none;
-  width: 400px;
+  width: 100%;
+  max-width: 380px;
   font-size: 16px;
   background-color: var(--header-nav-color);
-  border-radius: 5px;
+  border-radius: 6px;
   border: 1px solid var(--hero-btn-project-color);
-  margin-bottom: 24px;
-  padding: 15px 30px;
+  padding: 18px 30px;
   color: var(--background-body-color);
   line-height: 1.6;
 }
 
-.second-section{
-  width: 100%;
-  background-color: var(--section-second-background-color);
+@media (max-width: 1024px) {
+  .section-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  .about-me-content {
+    text-align: center;
+  }
+
+  .about-me-content p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list-about-me {
+    margin-top: 3rem;
+  }
 }
 
-.title-second h1{
-  padding-top: 6rem;
-  justify-content: center; text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--background-body-color);
-}
+@media (max-width: 480px) {
+  .about-me-content h1 {
+    font-size: 28px;
+  }
 
-.title-second p{
-  justify-content: center; text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--background-body-color);
-  margin-top: 12px;
-  margin-bottom: 6rem;
+  .list-about-me li {
+    padding: 15px 20px;
+  }
 }
